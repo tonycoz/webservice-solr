@@ -16,11 +16,13 @@ before_install:
 
 matrix:
   include:
-    - perl: '5.12'
-    - perl: '5.18'
-    - perl: '5.20'
     - perl: '5.26'
     - perl: '5.28'
+
+# test without server
+    - perl: '5.28'
+      env:
+        - SOLR_SERVER=
 
 install:
   - cpanm --quiet --installdeps --notest .
