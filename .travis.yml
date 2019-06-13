@@ -12,7 +12,6 @@ before_install:
   - docker pull solr:latest
   - docker run -d -p 127.0.0.1:8983:8983 -t --name test_solr solr
   - docker exec -it --user=solr test_solr bin/solr create_core -c test
-  - build-perl
 
 matrix:
   include:
